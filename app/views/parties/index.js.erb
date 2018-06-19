@@ -1,0 +1,11 @@
+function renderPartyInfo(input) {
+  const partyInfo = document.getElementById('party-info')
+  partyInfo.innerHTML = input;
+}
+
+// function rendermap(input) {
+//   const map = document.getElementById('map-id')
+//   map.innerHTML = input;
+// }
+
+renderPartyInfo('<%= j render "parties/party_info" %>');

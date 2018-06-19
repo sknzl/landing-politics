@@ -1,0 +1,11 @@
+<h1>Overview for year <%= @year %> </h1>
+<ul>
+<% @parties.each do |party| %>
+<li>
+<p> Party Name: <%= party[:name] %> </p>
+<p> Leader: <%= party[:leader] %> </p>
+<p> Politicians: <%= party[:politicians].count %> </p>
+<p> Subordinates: <%= party[:subordinates].count %> </p>
+</li>
+<% end %>
+</ul>
