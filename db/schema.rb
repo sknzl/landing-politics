@@ -10,9 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_06_19_130103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "events", force: :cascade do |t|
+    t.integer "year"
+    t.bigint "politician_id"
+    t.string "action"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["politician_id"], name: "index_events_on_politician_id"
+  end
+
+  create_table "parties", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "politicians", force: :cascade do |t|
+    t.string "name"
+    t.integer "birthyear"
+    t.boolean "leader"
+    t.bigint "party_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["party_id"], name: "index_politicians_on_party_id"
+  end
+
+  create_table "subordinates", force: :cascade do |t|
+    t.string "name"
+    t.integer "birthyear"
+    t.bigint "party_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["party_id"], name: "index_subordinates_on_party_id"
+  end
+
+  add_foreign_key "events", "politicians"
+  add_foreign_key "politicians", "parties"
+  add_foreign_key "subordinates", "parties"
 end

@@ -1,3 +1,4 @@
 class Politician < ApplicationRecord
-  belongs_to :party
+  has_one :party
+  has_many :events
 end

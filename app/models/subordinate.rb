@@ -1,3 +1,3 @@
 class Subordinate < ApplicationRecord
-  belongs_to :party
+  has_one :party
 end
