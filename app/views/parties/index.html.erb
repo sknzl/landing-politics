@@ -4,7 +4,7 @@
   </div>
 
   <%= form_tag root_path, method: :get, remote: true do %>
-    <div class="year-search" >
+    <div class="year-search text-center" >
       <label for="year" id="textYear">Year: <%= @year %></label>
       <input id="year" name="year" type="range" min="1970" max="2018" value="1970" onchange="updateYearInput(this.value);" >
     </div>

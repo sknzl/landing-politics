@@ -1,11 +1,28 @@
-<h1>Overview for year <%= @year %> </h1>
-<ul>
-<% @parties.each do |party| %>
-<li>
-<p> Party Name: <%= party[:name] %> </p>
-<p> Leader: <%= party[:leader] %> </p>
-<p> Politicians: <%= party[:politicians].count %> </p>
-<p> Subordinates: <%= party[:subordinates].count %> </p>
-</li>
-<% end %>
-</ul>
+<div class="text-center">
+  <h1 id="header">Overview for year <%= @year %> </h1>
+    <div class="row">
+    <% @parties.each do |party| %>
+      <div class="col-xs-6">
+        <div class="card">
+          <div class="party-name <%=party[:name]%>">
+          <p> <%= party[:name].capitalize %> Party </p>
+          </div>
+          <div class="party-info">
+
+            <%=link_to politician_path(party[:leader]), class: 'card-link' do %>
+             <i class="fas fa-user-tie"></i> <%= party[:leader].name %>
+             <%end%>
+
+            <p> Politicians: <%= party[:politicians].count %> </p>
+            <p> Subordinates: <%= party[:subordinates].count %> </p>
+          </div>
+          <div class="party-warning">
+            <%if party[:politicians].count + party[:subordinates].count + 1 >= 20 %>
+            <p class="warning-red"> Warning: More than 20 people! </p>
+          <%end%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

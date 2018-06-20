@@ -10,7 +10,7 @@ class PartiesController < ApplicationController
     Party.all.each do |party|
       @parties << {
         name: party.name,
-        leader: party.leader(@year).name,
+        leader: party.leader(@year),
         politicians: party.politicians_free(@year),
         subordinates: party.subordinates
       }
@@ -22,7 +22,7 @@ class PartiesController < ApplicationController
   private
 
   def party_params
-    params.require(:pary).permit(:year)
+    params.require(:party).permit(:year)
   end
 
 end

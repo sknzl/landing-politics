@@ -1,0 +1,61 @@
+.card{
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 0vh 0vh;
+  margin-bottom: 50px;
+  margin-right: 5vw;
+  margin-left: 5vw;
+}
+
+.party-name{
+background-color: $light-gray;
+padding: 20px 0;
+margin-bottom: 10px;
+font-weight: bolder;
+font-size: 18px;
+
+p {
+  margin: 0;
+}
+}
+
+.party-info{
+  padding: 20px 0;
+
+}
+
+  .red{
+  border-bottom: 2px solid red;
+  }
+
+ .green{
+  border-bottom: 2px solid green;
+  }
+
+ .blue{
+  border-bottom: 2px solid blue;
+  }
+
+  .brown{
+  border-bottom: 2px solid brown;
+  }
+
+.party-warning{
+      height: 25px;
+}
+
+.warning-red{
+  background-color: red;
+  color: white;
+}
+
+.card-link{
+  display: block;
+  color: $gray;
+  margin-bottom: 12px;
+   &:hover {
+        color: $gray;
+        opacity: 0.8;
+        text-decoration: none;
+    }
+}
