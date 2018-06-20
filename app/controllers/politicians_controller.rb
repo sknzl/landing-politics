@@ -2,6 +2,12 @@ class PoliticiansController < ApplicationController
   before_action :set_politician, only: [:show]
 
   def show
+    if params[:year].present?
+      @year = params[:year].to_i
+    else
+      @year = 1970
+    end
+
     if @politician.class == Politician
       @leader = Politician.where("party_id = #{@politician.party_id} AND leader = true").first
 
@@ -32,7 +38,7 @@ class PoliticiansController < ApplicationController
   end
 
   def politician_params
-      params.require(:politician).permit()
+      params.require(:politician).permit(:year)
   end
 
 

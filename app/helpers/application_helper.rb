@@ -7,7 +7,7 @@ module ApplicationHelper
         return html.html_safe
       else
         html = "Politician. The superior is "
-        html += link_to(leader.name, politician_path(leader))
+        html += link_to(leader.name, politician_path(leader, year: @year))
         return html.html_safe
       end
     else

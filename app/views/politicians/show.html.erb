@@ -11,7 +11,7 @@
 <%= timeline(chart_helper(@years_leader.first, @years_leader.last, @year_prison, @year_free), width: "50vw", height: "150px")%>
 </div>
 <%end%>
-<%= link_to 'Go to Overview', root_path %>
+<%= link_to 'Go to Overview', root_path(year: @year) %>
 </div>
 
 
