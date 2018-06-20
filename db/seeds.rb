@@ -20,7 +20,7 @@ end
 p "Destroy all politicians and create 4 politicians per party and 1 superior/leader"
 
 Party.all.each do |party|
-  birthyear = (1938..2000).to_a.sample
+  birthyear = (1930..1960).to_a.sample
   party_id = party.id
   leader = 1
   name = Faker::FunnyName.name

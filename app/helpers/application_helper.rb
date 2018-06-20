@@ -18,16 +18,27 @@ module ApplicationHelper
 
 
   def chart_helper(year_leader_start, year_leader_end, year_prison_start, year_prison_end)
-    if year_prison_start > year_leader_end || year_leader_start > year_prison_end
+    if year_prison_start != nil && year_leader_start !=nil
+      if year_prison_start > year_leader_end || year_leader_start > year_prison_end
+        return [
+          ["Leader", "#{year_leader_start}-01-01", "#{year_leader_end}-01-01"],
+          ["Prison", "#{year_prison_start}-01-01", "#{year_prison_end}-01-01"]
+        ]
+      else
+        return [
+          ["Leader",  "#{year_leader_start}-01-01", "#{year_prison_start}-01-01"],
+          ["Leader",  "#{year_prison_end}-01-01", "#{year_leader_end}-01-01"],
+          ["Prison", "#{year_prison_start}-01-01", "#{year_prison_end}-01-01"]
+        ]
+      end
+    elsif year_leader_start == nil
       return [
-        ["Leader", "#{year_leader_start}-01-01", "#{year_leader_end}-01-01"],
         ["Prison", "#{year_prison_start}-01-01", "#{year_prison_end}-01-01"]
       ]
-    else
+
+    elsif year_prison_start == nil
       return [
-        ["Leader",  "#{year_leader_start}-01-01", "#{year_prison_start}-01-01"],
-        ["Leader",  "#{year_prison_end}-01-01", "#{year_leader_end}-01-01"],
-        ["Prison", "#{year_prison_start}-01-01", "#{year_prison_end}-01-01"]
+        ["Leader", "#{year_leader_start}-01-01", "#{year_leader_end}-01-01"]
       ]
     end
   end

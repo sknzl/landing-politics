@@ -12,7 +12,7 @@ class PartiesController < ApplicationController
         name: party.name,
         leader: party.leader(@year),
         politicians: party.politicians_free(@year),
-        subordinates: party.subordinates
+        subordinates: party.subordinates.where("birthyear <= #{@year}")
       }
     end
   end

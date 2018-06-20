@@ -8,7 +8,7 @@ class Party < ApplicationRecord
     elsif politicians_free(year).any?
       return politicians_free(year).first
     else
-      return self.subordinates.first
+      return self.subordinates.order("birthyear ASC").first
     end
   end
 
@@ -24,7 +24,7 @@ class Party < ApplicationRecord
 
   def politicians_free(year)
     politicians_selected = []
-    self.politicians.where(" leader = false ").each do |politician|
+    self.politicians.where(" leader = false AND birthyear <= #{year}").each do |politician|
       politician_prison = Event.where("politician_id = #{politician.id} AND action = 'prison' ")
       politician_free = Event.where("politician_id = #{politician.id} AND action = 'free' ")
       if year < politician_prison.first.year || year > politician_free.first.year
