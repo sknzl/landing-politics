@@ -1,24 +1,32 @@
 <div class="container">
-  <div id="party-info">
-     <%= render 'party_info' %>
+  <div class="form">
+    <%= form_tag root_path, method: :get, remote: true do %>
+      <div class="year-search text-center" >
+        <label for="year" id="textYear">Overview year: <%= @year %></label>
+        <input id="year" name="year" type="range" min="1970" max="2018" value=<%= @year %> onchange="updateYearInput(this.value);" >
+      </div>
+
+      <div class="filter-button-element" style="margin-bottom: 10px">
+        <input type="submit" value="Apply filters" class="btn-filter-pnk" id="apply-button">
+      </div>
+    <% end %>
   </div>
 
-  <%= form_tag root_path, method: :get, remote: true do %>
-    <div class="year-search text-center" >
-      <label for="year" id="textYear">Year: <%= @year %></label>
-      <input id="year" name="year" type="range" min="1970" max="2018" value=<%= @year %> onchange="updateYearInput(this.value);" >
-    </div>
-
-    <div class="filter-button-element" style="margin-bottom: 10px">
-      <input type="submit" value="Apply filters" class="btn-filter-pnk" id="apply-button">
-    </div>
-  <% end %>
+    <div id="party-info">
+     <%= render 'party_info' %>
+  </div>
 </div>
+
+
+
+
+
+
 
 <% content_for :external_script do  %>
   <script>
     function updateYearInput(val) {
-          document.getElementById('textYear').innerHTML='Year: '+val;
+          document.getElementById('textYear').innerHTML='Overview year: '+val;
           document.getElementById("apply-button").click();
         }
   </script>

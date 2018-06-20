@@ -1,17 +1,24 @@
 <div class="container text-center">
-<h1> Details on <%= @politician.name %> </h1>
-<p> Belongs to: <%= Party.find(@politician.party_id).name.capitalize %> Party </p>
-<p> Position: <%= position_helper(@politician, @leader) %> </p>
-<p> Birthyear: <%= @politician.birthyear %> </p>
+
+<div class="card show-detail">
+  <div class="party-name <%=Party.find(@politician.party_id).name%>">
+    <p> <%= @politician.name %> </p>
+  </div>
+  <div class="party-info">
+    <p> <%= Party.find(@politician.party_id).name.capitalize %> Party </p>
+    <p> Position: <%= position_helper(@politician, @leader) %> </p>
+    <p> Birthyear: <%= @politician.birthyear %> </p>
+  </div>
+
+</div>
 
 <% if @years_leader != nil && @year_prison != nil %>
-<!-- <p> was leader in the years <%= @years_leader.each {|year| year} %> </p>
-<p> Went to prison <%=@year_prison%> and was released <%=@year_free%> </p> -->
-<div class="chart">
+
+<div class="chart ">
 <%= timeline(chart_helper(@years_leader.first, @years_leader.last, @year_prison, @year_free), width: "50vw", height: "150px")%>
 </div>
 <%end%>
-<%= link_to 'Go to Overview', root_path(year: @year) %>
+<%= link_to 'Go to Overview', root_path(year: @year), class: "card-link" %>
 </div>
 
 
