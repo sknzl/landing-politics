@@ -54,8 +54,11 @@ p {
   color: $gray;
   margin-bottom: 12px;
    &:hover {
-        color: $gray;
+        color: #da552f;
         opacity: 0.6;
         text-decoration: none;
     }
+}
+.inline{
+  display: inline;
 }
