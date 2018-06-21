@@ -29,3 +29,13 @@ corresponding time as leader and prisoner is visualized. Parties that reach a cr
 ## Remarks
 
 Predefined seeds exist. However database entries can be created, edited and destroyed in the "Administration" menu.
+
+## System Test
+
+The system can be tested with following command:
+
+```bash
+$ rails test:system
+```
+
+The test verifies that the number of cards shown on the index page equals the number of parties
