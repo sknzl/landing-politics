@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :events
+      resources :parties
+      resources :politicians
+      resources :subordinates
+
+      root to: "events#index"
+    end
   root to: 'parties#index'
 
   resources :politicians, only: [:show]

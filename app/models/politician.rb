@@ -1,4 +1,4 @@
 class Politician < ApplicationRecord
-  has_one :party
+  belongs_to :party
   has_many :events
 end
