@@ -17,3 +17,12 @@
 @import "parties/index";
 
 @import "politicians/index";
+
+*:focus {
+  outline: none !important;
+}
+
+a:focus {
+    color: $gray;
+    text-decoration: none;
+  }

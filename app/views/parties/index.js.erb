@@ -6,5 +6,6 @@ function renderPartyInfo(input) {
 renderPartyInfo('<%= j render "party_info" %> \
     <% @parties.each do |party| %> \
       <%= j render "modal_politicians", party: party %> \
+      <%= j render "modal_subordinates", party: party %> \
     <%end%>');
 

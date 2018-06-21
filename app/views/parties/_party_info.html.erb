@@ -13,11 +13,15 @@
              <%end%>
 
             <p>
-            <%= link_to "#politicians-#{party[:name]}", 'data-toggle' => 'modal' do %>
+            <%= link_to "#politicians-#{party[:name]}", 'data-toggle' => 'modal', class: 'card-link' do %>
               Politicians: <%= party[:politicians].count %>
             <%end%>
             </p>
-            <p> Subordinates: <%= party[:subordinates].count %> </p>
+            <p>
+            <%= link_to "#subordinates-#{party[:name]}", 'data-toggle' => 'modal', class: 'card-link' do %>
+              Subordinates: <%= party[:subordinates].count %>
+            <%end%>
+           </p>
           </div>
           <div class="party-warning">
             <%if party[:politicians].count + party[:subordinates].count + 1 >= 20 %>

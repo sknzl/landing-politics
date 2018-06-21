@@ -18,6 +18,7 @@
     <%= render 'party_info' %>
     <% @parties.each do |party| %>
       <%= render "modal_politicians", party: party %>
+      <%= render "modal_subordinates", party: party %>
     <%end%>
   </div>
 </div>

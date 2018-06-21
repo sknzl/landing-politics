@@ -1,21 +1,21 @@
-<div class="modal fade" id="politicians-<%=party[:name]%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="subordinates-<%=party[:name]%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h5 class="modal-title" id="exampleModalLabel">Politicians for the <%=party[:name].capitalize%> Party in <%=@year%> </h5>
+        <h5 class="modal-title" id="exampleModalLabel">Subordinates for the <%=party[:name].capitalize%> Party in <%=@year%> </h5>
 
       </div>
       <div class="modal-body">
-        <% if party[:politicians].empty? %>
+        <% if party[:subordinates].empty? %>
           <p> None </p>
         <%end%>
         <ul>
-        <% party[:politicians].each do |politician| %>
+        <% party[:subordinates].each do |subordinate| %>
         <li>
-          <%= politician.name %>
+          <%= subordinate.name %>
         </li>
         <%end%>
       </ul>
