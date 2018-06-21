@@ -18,3 +18,10 @@ Criminal politicians are organized in 4 different political parties:
   - The Brown Party
 
 Each party consists of corrupt politicians, one party leader and several subordinates.
+If the leader goes to prison another politician becomes temporarily the leader until the imprisoned leader is released.
+If all politicians are in prison for a given year the oldest subordinate becomes temporarily the leader.
+
+## How to use
+
+With the slider a specific year can be selected. An overview shows the current leader of each party, subordinates and politicains, which are not in prison. For the leaders, politicians and subordinates the details can be shown and their
+corresponding time as leader and prisoner is visualized.
