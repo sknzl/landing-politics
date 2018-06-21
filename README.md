@@ -24,8 +24,8 @@ If all politicians are in prison for a given year the oldest subordinate becomes
 ## How to use
 
 With the slider a specific year can be selected. An overview shows the current leader of each party, subordinates and politicians, which are not in prison. For the leaders, politicians and subordinates the details can be shown and their
-corresponding time as leader and prisoner is visualized.
+corresponding time as leader and prisoner is visualized. Parties that reach a critical number of people >= 20 are marked in the overview page.
 
 ## Remarks
 
-Predefined seeds exists. However database entries can be created, edited and destroyed in the "Administration" menu.
+Predefined seeds exist. However database entries can be created, edited and destroyed in the "Administration" menu.
