@@ -8,9 +8,15 @@
           </div>
           <div class="party-info">
 
-            <%=link_to politician_path(party[:leader], year: @year), class: 'card-link' do %>
-             <i class="fas fa-user-tie"></i> <%= party[:leader].name %>
-             <%end%>
+            <% if  party[:leader].class == Politician %>
+              <%=link_to politician_path(party[:leader], year: @year), class: 'card-link' do %>
+              <i class="fas fa-user-tie"></i> <%= party[:leader].name %>
+              <%end%>
+            <%else%>
+            <%=link_to subordinate_path(party[:leader], year: @year), class: 'card-link' do %>
+              <i class="fas fa-user-tie"></i> <%= party[:leader].name %>
+              <%end%>
+            <%end%>
 
             <p>
             <%= link_to "#politicians-#{party[:name]}", 'data-toggle' => 'modal', class: 'card-link' do %>
