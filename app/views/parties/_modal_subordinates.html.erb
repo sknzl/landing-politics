@@ -15,7 +15,7 @@
         <ul>
         <% party[:subordinates].each do |subordinate| %>
         <li>
-          <%= subordinate.name %>
+          <%=link_to subordinate.name, subordinate_path(subordinate, year: @year), class: 'card-link' %>
         </li>
         <%end%>
       </ul>

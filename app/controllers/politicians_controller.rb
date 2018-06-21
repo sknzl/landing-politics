@@ -32,8 +32,6 @@ class PoliticiansController < ApplicationController
   def set_politician
     if Politician.exists?(params[:id])
       @politician = Politician.find(params[:id])
-    else
-      @politician = Subordinate.find(params[:id])
     end
   end
 

@@ -11,7 +11,7 @@ module ApplicationHelper
         return html.html_safe
       end
     else
-      leader = Politician.where("party_id = #{@politician.party_id} AND leader = true").first
+      leader = Politician.where("party_id = #{politician.party_id} AND leader = true").first
       html = "Subordinate. The superior is "
       html += link_to(leader.name, politician_path(leader, year: @year))
       return html.html_safe
