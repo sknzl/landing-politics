@@ -1,0 +1,17 @@
+<div class="container text-center">
+
+<div class="card show-detail">
+  <div class="party-name <%=Party.find(@subordinate.party_id).name%>">
+    <p> <%= @subordinate.name %> </p>
+  </div>
+  <div class="party-info">
+    <p> <%= Party.find(@subordinate.party_id).name.capitalize %> Party </p>
+    <p> Position: <%= position_helper(@subordinate, @leader) %> </p>
+    <p> Birthyear: <%= @subordinate.birthyear %> </p>
+  </div>
+
+</div>
+<%= link_to 'Go to Overview', root_path(year: @year), class: "card-link" %>
+</div>
+
+

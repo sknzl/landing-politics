@@ -15,7 +15,7 @@
         <ul>
         <% party[:politicians].each do |politician| %>
         <li>
-          <%= politician.name %>
+          <%=link_to politician.name, politician_path(politician, year: @year), class: 'card-link' %>
         </li>
         <%end%>
       </ul>
