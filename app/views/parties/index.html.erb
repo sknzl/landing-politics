@@ -3,7 +3,9 @@
     <%= form_tag root_path, method: :get, remote: true do %>
       <div class="year-search text-center" >
         <label for="year" id="textYear">Overview year: <%= @year %></label>
+        <div class="slider">
         <input id="year" name="year" type="range" min="1970" max="2018" value=<%= @year %> onchange="updateYearInput(this.value);" >
+        </div>
       </div>
 
       <div class="filter-button-element" style="margin-bottom: 10px">
