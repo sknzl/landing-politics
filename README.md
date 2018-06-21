@@ -3,13 +3,13 @@ Demo of app [landing-politics](https://landing-politics.herokuapp.com/)
 
 ## Getting started
 
-After cloning/downloading the app run following:
+After cloning/downloading the app run the following:
 
 ```bash
 $ yarn install
 $ rails db:create db:migrate db:seed
 ```
-## Explaination
+## Explanation
 
 Criminal politicians are organized in 4 different political parties:
   - The Red Party
@@ -23,5 +23,9 @@ If all politicians are in prison for a given year the oldest subordinate becomes
 
 ## How to use
 
-With the slider a specific year can be selected. An overview shows the current leader of each party, subordinates and politicains, which are not in prison. For the leaders, politicians and subordinates the details can be shown and their
+With the slider a specific year can be selected. An overview shows the current leader of each party, subordinates and politicians, which are not in prison. For the leaders, politicians and subordinates the details can be shown and their
 corresponding time as leader and prisoner is visualized.
+
+## Remarks
+
+Predefined seeds exists. However database entries can be created, edited and destroyed in the "Administration" menu.
