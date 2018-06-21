@@ -12,7 +12,11 @@
              <i class="fas fa-user-tie"></i> <%= party[:leader].name %>
              <%end%>
 
-            <p> Politicians: <%= party[:politicians].count %> </p>
+            <p>
+            <%= link_to "#politicians-#{party[:name]}", 'data-toggle' => 'modal' do %>
+              Politicians: <%= party[:politicians].count %>
+            <%end%>
+            </p>
             <p> Subordinates: <%= party[:subordinates].count %> </p>
           </div>
           <div class="party-warning">

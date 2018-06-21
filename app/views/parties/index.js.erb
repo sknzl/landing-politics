@@ -3,4 +3,8 @@ function renderPartyInfo(input) {
   partyInfo.innerHTML = input;
 }
 
-renderPartyInfo('<%= j render "parties/party_info" %>');
+renderPartyInfo('<%= j render "party_info" %> \
+    <% @parties.each do |party| %> \
+      <%= j render "modal_politicians", party: party %> \
+    <%end%>');
+
