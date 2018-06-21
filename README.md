@@ -32,7 +32,7 @@ Predefined seeds exist. However database entries can be created, edited and dest
 
 ## System Test
 
-The system can be tested with following command:
+A simple system test is included:
 
 ```bash
 $ rails test:system
